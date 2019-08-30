@@ -8,16 +8,18 @@
     <link rel="stylesheet" type="text/css" href="app.css"></link>
   </head>
   <body>
+    <!-- The button controls-->
     <div class="controls">
       <button class="inputs" id="add">Add</button>
       <button class="inputs" id="delete">Delete</button>
     </div>
+    <!-- The pop-up window for input data -->
     <div class="add_task">
       <h2>Add Assignment</h2>
-      <span class="data">Date Start: <input type="text" class="datepicker"></span>
-      <span class="data"> Date Due: <input type="text" class="datepicker"></span>
-      <span class="data">Assignment: <input type="text"></span>
-      <span class="data">Priority: <select name="priority">
+      <span class="data">Date Start: <input type="text" id="start" class="datepicker" ></span>
+      <span class="data"> Date Due: <input type="text" class="datepicker" id="due"></span>
+      <span class="data">Assignment: <input type="text" id="assignment"></span>
+      <span class="data">Priority: <select name="priority" id="priority">
           <option value="-">-</option>
           <option value="P0">P0</option>
           <option value="P1">P1</option>
@@ -30,14 +32,17 @@
       <button class="inputs" id="cancel">Cancel</button>
       <button class="inputs" id="submit">Submit</button>
     </div>
+    <!-- The Assignment Table -->
     <table class="list">
       <tr>
           <th>Date</th>
           <th>Priority</th>
-          <th>Issue</th>
+          <th>Assignment</th>
           <th>Due Date</th>
       </tr>
     </table>
+
+    <!-- Link to the js file -->
     <script src="data_generator.js"></script>
   </body>
 </html>
