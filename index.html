@@ -2,9 +2,11 @@
 <html>
   <head>
     <title>Assign Me!</title>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="app.css"></link>
   </head>
   <body>
@@ -14,6 +16,11 @@
     </div>
     <div class="add_task">
       <h2>Add Assignment</h2>
+      <p class="data">Date Start: <input type="text" class="datepicker"></p>
+      <p class="data">Date Due: <input type="text" class="datepicker"></p>
+      <p class="data">Assignment: <input type="text"></p>
+      <p class="data">Description:</p>
+      <p class="data"><textarea name="paragraph_text" cols="50" rows="10"></textarea></p>
       <button class="inputs" id="cancel">Cancel</button>
       <button class="inputs" id="submit">Submit</button>
     </div>
@@ -29,9 +36,14 @@
     $("#add").on("click",function(){
         $(".add_task").addClass("active");
     } )
+
     $("#cancel").on("click",function(){
         $(".add_task").removeClass("active");
     } )
+
+    $(function(){
+      $(".datepicker").datepicker();
+    })
     </script>
   </body>
 </html>
