@@ -21,11 +21,13 @@ $("#submit").on("click", function(){
   var start = $("#start").val();
   var priority = $("#priority").val();
   var assignment = $("#assignment").val();
+  var description = $("#description").val();
   var due = $("#due").val();
   var obj = {}
   obj['start'] = start;
   obj['priority'] = priority;
   obj['assignment'] = assignment;
+  obj['description'] = description;
   obj['due'] = due;
   obj['id'] = taskNum();
   //getData();
