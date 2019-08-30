@@ -30,7 +30,8 @@ $("#submit").on("click", function(){
   obj['id'] = taskNum();
   //getData();
   var task = JSON.stringify(obj);
-  $(".list").append(`<tr>
+  $(".list").append(`<tr class="assignment">
+  <td><input type="checkbox" class="selector"></td>
   <td>${start}</td>
   <td>${priority}</td>
   <td>${assignment}</td>
@@ -40,6 +41,13 @@ $("#submit").on("click", function(){
   $(".add_task").removeClass("active");
 })
 
+//delete button
+$("#delete").on("click", function(){
+  $(".assignment").remove()
+})
+
+
+//the date picker input
 $(function(){
 $(".datepicker").datepicker();
 })
