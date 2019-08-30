@@ -5,34 +5,38 @@
 */
 
 //Jquery functions
+//add button
 $("#add").on("click",function(){
   $(".add_task").addClass("active");
-  var start = $("#start").val('');
-  var priority = $("#priority").val('');
-  var assignment = $("#assignment").val('');
-  var due = $("#due").val('');
+  clearData();
 } )
 
+//cancel button
 $("#cancel").on("click",function(){
   $(".add_task").removeClass("active");
 } )
 
+//submit button
 $("#submit").on("click", function(){
   var start = $("#start").val();
   var priority = $("#priority").val();
   var assignment = $("#assignment").val();
   var due = $("#due").val();
-  var obj = {};
+  var obj = {}
   obj['start'] = start;
   obj['priority'] = priority;
   obj['assignment'] = assignment;
   obj['due'] = due;
+  obj['id'] = taskNum();
+  //getData();
+  var task = JSON.stringify(obj);
   $(".list").append(`<tr>
   <td>${start}</td>
   <td>${priority}</td>
   <td>${assignment}</td>
   <td>${due}</td>
-</tr>`)
+  </tr>`)
+  addTask(obj.id, obj);
   $(".add_task").removeClass("active");
 })
 
@@ -46,12 +50,48 @@ var addTask = function(key, value){
   return window.localStorage.setItem(key, value);
 }
 
-var deleteTask = function(key){
-  return window.localStorage.removeItem(key);
+var getTask = function(key){
+  return JSON.parse(window.localStorage.getItem(key));
 }
 
-var getKeyTask = function(key){
-  return JSON.parse(window.localStorage.getItem(key));
+var updateTask = function(key, value) {
+  value = JSON.stringify(value);
+  return window.localStorage.setItem(key, value);
+};
+
+
+//pop-up window functions
+var clearData = function(){
+  var start = $("#start").val('');
+  var priority = $("#priority").val('');
+  var assignment = $("#assignment").val('');
+  var due = $("#due").val('');
+}
+
+var createId = function(){
+  var taskCount = 0;
+  if(getTask('taskCount') !== null){
+    taskCount = getTask('taskCount');
+  } else {
+    taskCount = 0;
+    addTask('taskCount', 0);
+  }
+  return function(){
+    var taskNumber = 'task' + taskCount;
+    taskCount++;
+    updateTask('taskCount', taskCount);
+    return taskNumber;
+  }
+}
+
+var taskNum = createId()
+
+var getData = function(){
+  var start = $("#start").val();
+  var priority = $("#priority").val();
+  var assignment = $("#assignment").val();
+  var due = $("#due").val();
+  var task = {};
 }
 
 
