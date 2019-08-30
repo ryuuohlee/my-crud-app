@@ -1,5 +1,6 @@
 #Assign me!
 This app will be an assignment tracker that organizes based on priority.
+![alt text](https://drive.google.com/file/d/1FiQAtc07b69na0zOSVuTSveAXbpneOhJ/view?usp=sharing)
 
 ##Current App Status
 Working on UI
