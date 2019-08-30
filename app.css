@@ -46,3 +46,11 @@ h2{
 #submit{
   justify-self: self-end;
 }
+
+#header{
+  background-color: red;
+}
+
+h2{
+  color: red;
+}
