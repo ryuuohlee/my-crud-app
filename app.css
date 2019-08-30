@@ -1,6 +1,12 @@
 .list{
   width: 100%;
   border: 1px solid #dddddd;
+  text-align: center;
+}
+
+tr:nth-child(even){
+  /*makes every even row grey*/
+  background-color: #dddddd;
 }
 
 .add_task{
