@@ -2,13 +2,20 @@
 <html>
   <head>
     <title>Assign Me!</title>
-    <script src="jquery.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="app.css"></link>
   </head>
   <body>
     <div class="controls">
-      <button class="inputs" id="Add">Add</button>
-      <button class="inputs" id="Delete">Delete</button>
+      <button class="inputs" id="add">Add</button>
+      <button class="inputs" id="delete">Delete</button>
+    </div>
+    <div class="add_task">
+      <h2>Add Assignment</h2>
+      <button class="inputs" id="cancel">Cancel</button>
+      <button class="inputs" id="submit">Submit</button>
     </div>
     <table class="list">
       <tr>
@@ -18,5 +25,13 @@
           <th>Due Date</th>
       </tr>
     </table>
+    <script>
+    $("#add").on("click",function(){
+        $(".add_task").addClass("active");
+    } )
+    $("#cancel").on("click",function(){
+        $(".add_task").removeClass("active");
+    } )
+    </script>
   </body>
 </html>
