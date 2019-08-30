@@ -1,0 +1,32 @@
+.list{
+  width: 100%;
+  border: 1px solid #dddddd;
+}
+
+.add_task{
+  /*hides pop-up window*/
+  visibility: hidden;
+  position: absolute;
+  width: 50%;
+  border: 2px solid #000000;
+  background: #ffffff;
+  left: 25%;
+}
+
+.add_task.active{
+  /*makes pop-up visible*/
+  visibility: visible;
+}
+
+h2{
+  margin-top: 1px;
+  margin-left: 5px;
+}
+
+.inputs{
+  margin: 5px;
+}
+
+#submit{
+  justify-self: self-end;
+}
