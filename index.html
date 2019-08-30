@@ -16,9 +16,17 @@
     </div>
     <div class="add_task">
       <h2>Add Assignment</h2>
-      <p class="data">Date Start: <input type="text" class="datepicker"></p>
-      <p class="data">Date Due: <input type="text" class="datepicker"></p>
-      <p class="data">Assignment: <input type="text"></p>
+      <span class="data">Date Start: <input type="text" class="datepicker"></span>
+      <span class="data"> Date Due: <input type="text" class="datepicker"></span>
+      <span class="data">Assignment: <input type="text"></span>
+      <span class="data">Priority: <select name="priority">
+          <option value="-">-</option>
+          <option value="P0">P0</option>
+          <option value="P1">P1</option>
+          <option value="P2">P2</option>
+          <option value="P3">P3</option>
+        </select>
+       </span>
       <p class="data">Description:</p>
       <p class="data"><textarea name="paragraph_text" cols="50" rows="10"></textarea></p>
       <button class="inputs" id="cancel">Cancel</button>
@@ -33,17 +41,7 @@
       </tr>
     </table>
     <script>
-    $("#add").on("click",function(){
-        $(".add_task").addClass("active");
-    } )
 
-    $("#cancel").on("click",function(){
-        $(".add_task").removeClass("active");
-    } )
-
-    $(function(){
-      $(".datepicker").datepicker();
-    })
     </script>
   </body>
 </html>
