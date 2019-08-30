@@ -23,6 +23,16 @@ h2{
   margin-left: 5px;
 }
 
+.data{
+  margin-left: 5px;
+}
+
+#datepicker{
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+
 .inputs{
   margin: 5px;
 }
